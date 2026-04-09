@@ -17,7 +17,11 @@
             --accent-warm: #E66F45;     /* Naranja más oscuro para botones/hovers */
             --grain-overlay: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
         }
-
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
         * {
             margin: 0;
             padding: 0;
@@ -231,10 +235,10 @@
 
         /* Portfolio Section */
         .portfolio {
-            padding: 8rem 2rem;
-            /* Línea 337 aprox */
-background: linear-gradient(90deg, transparent, #FF7F50, transparent);
-        }
+    padding: 6rem 2rem;
+    background-color: var(--bg-dark); /* Cáscara de huevo sólida */
+    width: 100%;
+}
 
         .portfolio-container {
             max-width: 1200px;
@@ -464,6 +468,12 @@ background: linear-gradient(90deg, transparent, #FF7F50, transparent);
         
         <a href="#contact" class="hero-cta">LET'S WORK TOGETHER</a>
     </div>
+     <div style="margin-top: 4rem; opacity: 0.5; animation: bounce 2s infinite; display: flex; flex-direction: column; align-items: center;">
+    <span style="font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; margin-bottom: 0.5rem;">SCROLL</span>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+    </svg>
+</div>
 </section>
 
     <!-- Services Section -->
