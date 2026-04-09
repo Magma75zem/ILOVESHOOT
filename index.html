@@ -47,13 +47,14 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 2rem;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1410 100%);
+    background-color: var(--bg-dark); /* Esto usará el color cáscara de huevo */
+    color: var(--text-primary);       /* Esto pondrá el texto en gris oscuro */
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+}
         }
 
         .hero::after {
