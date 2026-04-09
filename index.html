@@ -46,11 +46,10 @@
         }
 
         /* Hero Section */
-       .hero {
-    /* Empieza en blanco puro (#FFFFFF) y a mitad de sección ya es cáscara de huevo (#F0EAD6) */
-    background: linear-gradient(180deg, #FFFFFF 0%, #F0EAD6 50%, #F0EAD6 100%);
-    color: #1A1A1A; /* Texto oscuro para que se lea bien sobre el fondo claro */
-    padding: 6rem 2rem;
+    .hero {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 25%, #F0EAD6 65%, #F0EAD6 100%);
+    color: #1A1A1A;
+    padding: 1.5rem 2rem 6rem 2rem; /* Menos espacio arriba para pegar el logo al blanco */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,21 +103,20 @@
         }
 
         .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.2rem 2.5rem;
-            background: transparent;
-            border: 2px solid var(--accent-gold);
-            color: var(--accent-gold);
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.3rem;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
+    background-color: #FF7F50; /* Tu nuevo naranja */
+    color: white !important;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.hero-cta:hover {
+    background-color: #E66F45; /* Naranja un poco más oscuro al pasar el ratón */
+    transform: scale(1.05);
+}
 
         .hero-cta::before {
             content: '';
@@ -448,15 +446,17 @@
 </head>
 <body>
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="logo-container">
-    <img src="ils logo.png" alt="ILOVESHOOT" class="main-logo">
-</div>
-            <p class="hero-subtitle">Audiovisual Production • 20+ Years Crafting Stories from NYC to Oslo</p>
-            <a href="#contact" class="hero-cta">LET'S WORK TOGETHER</a>
-        </div>
-    </section>
+ <section class="hero">
+    <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <img src="ils logo.png" alt="ILOVESHOOT" style="max-width: 280px; height: auto; margin-bottom: 1rem;">
+        
+        <p style="max-width: 750px; margin: 0 auto 2.5rem auto; font-size: 1.35rem; line-height: 1.6; color: #1A1A1A; font-family: 'Crimson Pro', serif; font-style: italic; text-align: center;">
+            Audiovisual Production • 20+ Years Crafting Stories from NYC to Oslo
+        </p>
+        
+        <a href="#contact" class="hero-cta">LET'S WORK TOGETHER</a>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section class="services">
