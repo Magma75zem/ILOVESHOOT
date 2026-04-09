@@ -11,8 +11,8 @@
        :root {
             --bg-dark: #F0EAD6;         /* Eggshell - Fondo principal */
             --bg-card: #FFFFFF;         /* Blanco puro para las tarjetas */
-            --text-primary: #1A1A1A;    /* Gris casi negro para máxima legibilidad */
-            --text-secondary: #4A4A4A;  /* Gris medio para textos secundarios */
+            --text-primary: #1A1A1A;  /* Gris casi negro */
+--text-secondary: #4A4A4A; /* Gris medio */
             --accent-gold: #FF7F50;     /* Naranja Coral - Color de acento principal */
             --accent-warm: #E66F45;     /* Naranja más oscuro para botones/hovers */
             --grain-overlay: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
@@ -232,7 +232,8 @@
         /* Portfolio Section */
         .portfolio {
             padding: 8rem 2rem;
-            background: linear-gradient(180deg, var(--bg-dark) 0%, #1a1410 100%);
+            /* Línea 337 aprox */
+background: linear-gradient(90deg, transparent, #FF7F50, transparent);
         }
 
         .portfolio-container {
@@ -241,13 +242,13 @@
         }
 
         .vimeo-embed {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            margin-bottom: 3rem;
-            border: 2px solid var(--accent-gold);
-        }
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    border: 2px solid var(--accent-gold); /* Esto ahora será Naranja */
+}
 
         .vimeo-embed iframe {
             position: absolute;
@@ -257,16 +258,16 @@
             height: 100%;
         }
 
-        .portfolio-link {
-            display: inline-block;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 0.1em;
-            color: var(--accent-gold);
-            text-decoration: none;
-            border-bottom: 2px solid var(--accent-gold);
-            transition: all 0.3s ease;
-        }
+      .portfolio-link {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold); /* Cambia de dorado a Naranja */
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent-gold);
+    transition: all 0.3s ease;
+}
 
         .portfolio-link:hover {
             color: var(--text-primary);
@@ -315,11 +316,18 @@
         }
 
         /* Contact Section */
-        .contact {
-            padding: 8rem 2rem;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1410 100%);
-            position: relative;
-        }
+       .contact {
+    background-color: var(--bg-dark); /* Cáscara de huevo */
+    color: var(--text-primary);       /* Gris oscuro */
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+.contact h2 {
+    color: var(--accent-gold); /* Usará el naranja coral */
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+}
 
         .contact::before {
             content: '';
