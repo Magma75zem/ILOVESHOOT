@@ -19,22 +19,11 @@
             --grain-overlay: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
-        }
+        /* --- ESTILOS GENERALES --- */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'DM Sans', sans-serif;
@@ -45,421 +34,78 @@
         }
 
         body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--grain-overlay);
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.4;
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--grain-overlay); pointer-events: none; z-index: 9999; opacity: 0.4;
         }
 
-        /* Hero Section */
+        /* --- HERO SECTION --- */
         .hero {
             background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 25%, #F0EAD6 65%, #F0EAD6 100%);
-            padding: 2rem 2rem 6rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            min-height: 100vh; /* Ajustado para dar espacio a la imagen */
-            position: relative;
+            padding: 3rem 2rem 6rem 2rem;
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            min-height: 100vh; position: relative;
         }
 
-        .main-logo {
-            max-width: 280px;
-            height: auto;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease-out;
-        }
+        .main-logo { max-width: 280px; height: auto; margin-bottom: 1.5rem; animation: fadeInUp 0.8s ease-out; }
 
         .hero-subtitle {
-            font-family: 'Crimson Pro', serif;
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            animation: fadeInUp 1s ease-out;
+            font-family: 'Crimson Pro', serif; font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: var(--text-secondary); font-style: italic; margin-bottom: 2.5rem;
+            max-width: 700px; animation: fadeInUp 1s ease-out;
         }
 
         .hero-cta {
-            background-color: var(--accent-gold);
-            color: white !important;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.2rem;
-            transition: 0.3s;
-            display: inline-block;
-            animation: fadeInUp 1.2s ease-out;
+            background-color: var(--accent-gold); color: white !important;
+            padding: 1rem 2.5rem; text-decoration: none; border-radius: 5px;
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem;
+            transition: 0.3s; display: inline-block; animation: fadeInUp 1.2s ease-out;
         }
 
-        .hero-cta:hover {
-            background-color: var(--accent-warm);
-            transform: scale(1.05);
-        }
+        .hero-cta:hover { background-color: var(--accent-warm); transform: scale(1.05); }
 
-        /* Estilo para la foto de abajo */
-        .hero-image-container {
-            margin-top: 4rem;
-            width: 100%;
-            max-width: 900px;
-            animation: fadeInUp 1.4s ease-out;
-        }
+        .hero-image-container { margin-top: 4rem; width: 100%; max-width: 900px; animation: fadeInUp 1.4s ease-out; }
 
         .hero-image {
-            width: 100%;
-            height: 450px; /* Aquí controlas la altura de la foto */
-            object-fit: cover; /* Evita que se deforme */
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 100%; height: 450px; object-fit: cover;
+            border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
+        /* --- SERVICES SECTION --- */
+        .services { padding: 8rem 2rem; background: var(--bg-dark); text-align: center; }
+        .section-title { 
+            font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5rem); 
+            color: var(--accent-gold); margin-bottom: 4rem; 
+        }
+        .services-grid { 
+            max-width: 1200px; margin: 0 auto; display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; 
+        }
+        .service-card { 
+            background: white; padding: 3rem 2rem; border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; 
+        }
+        .service-card:hover { transform: translateY(-10px); }
+
+        /* --- PORTFOLIO --- */
+        .portfolio { padding: 6rem 2rem; background: var(--bg-dark); }
+        .vimeo-embed { 
+            position: relative; padding-bottom: 56.25%; height: 0; 
+            margin-bottom: 3rem; border: 2px solid var(--accent-gold); 
+        }
+        .vimeo-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* --- CONTACT --- */
+        .contact { padding: 8rem 2rem; text-align: center; background: var(--bg-dark); }
+        .contact h2 { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--accent-gold); }
     </style>
-    /* Services Section */
-        .services {
-            padding: 8rem 2rem;
-            position: relative;
-            background: var(--bg-dark);
-        }
-
-        .section-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            letter-spacing: 0.05em;
-            margin-bottom: 4rem;
-            text-align: center;
-            color: var(--accent-gold);
-        }
-
-        .services-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--bg-card);
-            padding: 3rem 2rem;
-            border: 1px solid rgba(212, 165, 116, 0.1);
-            position: relative;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: fadeIn 0.8s ease-out backwards;
-        }
-
-        .service-card:nth-child(1) { animation-delay: 0.1s; }
-        .service-card:nth-child(2) { animation-delay: 0.2s; }
-        .service-card:nth-child(3) { animation-delay: 0.3s; }
-        .service-card:nth-child(4) { animation-delay: 0.4s; }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 0;
-            background: var(--accent-gold);
-            transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-card:hover::before {
-            height: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateX(10px);
-            border-color: rgba(212, 165, 116, 0.3);
-        }
-
-        .service-number {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 4rem;
-            color: var(--accent-warm);
-            opacity: 0.3;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .service-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            letter-spacing: 0.08em;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .service-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .service-price {
-            font-family: 'Crimson Pro', serif;
-            font-style: italic;
-            color: var(--accent-gold);
-            font-size: 1.1rem;
-            border-top: 1px solid rgba(212, 165, 116, 0.2);
-            padding-top: 1rem;
-            margin-top: 1.5rem;
-        }
-/* Portfolio Section */
-        .portfolio {
-    padding: 6rem 2rem;
-    background-color: var(--bg-dark); /* Cáscara de huevo sólida */
-    width: 100%;
-}
-
-        .portfolio-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .vimeo-embed {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    margin-bottom: 3rem;
-    border: 2px solid var(--accent-gold); /* Esto ahora será Naranja */
-}
-
-        .vimeo-embed iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-      .portfolio-link {
-    display: inline-block;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 0.1em;
-    color: var(--accent-gold); /* Cambia de dorado a Naranja */
-    text-decoration: none;
-    border-bottom: 2px solid var(--accent-gold);
-    transition: all 0.3s ease;
-}
-
-        .portfolio-link:hover {
-            color: var(--text-primary);
-            border-color: var(--text-primary);
-        }
-
-        /* Experience Section */
-        .experience {
-            padding: 8rem 2rem;
-            background: var(--bg-dark);
-        }
-
-        .experience-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .experience-grid {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .experience-item {
-            padding: 2rem;
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent-gold);
-            animation: slideInLeft 0.8s ease-out backwards;
-        }
-
-        .experience-item:nth-child(1) { animation-delay: 0.1s; }
-        .experience-item:nth-child(2) { animation-delay: 0.2s; }
-        .experience-item:nth-child(3) { animation-delay: 0.3s; }
-
-        .experience-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            letter-spacing: 0.05em;
-            color: var(--accent-gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-description {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Contact Section */
-       .contact {
-    background-color: var(--bg-dark); /* Cáscara de huevo */
-    color: var(--text-primary);       /* Gris oscuro */
-    padding: 8rem 2rem;
-    text-align: center;
-}
-
-.contact h2 {
-    color: var(--accent-gold); /* Usará el naranja coral */
-    font-family: 'Bebas Neue', sans-serif;
-    text-transform: uppercase;
-}
-
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-            opacity: 0.3;
-        }
-
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-
-        .contact-item {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            letter-spacing: 0.05em;
-        }
-
-        .contact-item a {
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .contact-item a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-gold);
-            transition: width 0.4s ease;
-        }
-
-        .contact-item a:hover::after {
-            width: 100%;
-        }
-
-        .contact-item a:hover {
-            color: var(--accent-gold);
-        }
-
-        .contact-label {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            display: block;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 2rem;
-            background: var(--bg-card);
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 2rem 1.5rem;
-            }
-
-            .services, .portfolio, .experience, .contact {
-                padding: 4rem 1.5rem;
-            }
-        .hero-image-frame {
-  background: var(--bg-light);
-  padding: 2.5rem;
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-image-frame img {
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .hero-image-frame img {
-    max-width: 100%;
-  }
-}
-    </style>
-
 </head>
 <body>
 
     <section class="hero">
-        <img src="ils logo.png" alt="ILOVESHOOT" class="main-logo">
-
+        <img src="images/logo.png" alt="ILOVESHOOT" class="main-logo">
         <p class="hero-subtitle">
             Audiovisual Production • 20+ Years Crafting Stories from NYC to Oslo
         </p>
-
         <a href="#contact" class="hero-cta">LET'S WORK TOGETHER</a>
 
         <div class="hero-image-container">
@@ -473,141 +119,28 @@
         </div>
     </section>
 
-</body>
-</html>
-
-        
-        </head>
-<body>
-    <!-- Hero Section -->
- <section class="hero">
-    <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <img src="ils logo.png" alt="ILOVESHOOT" style="max-width: 280px; height: auto; margin-bottom: 1rem;">
-        
-        <p style="max-width: 750px; margin: 0 auto 2.5rem auto; font-size: 1.35rem; line-height: 1.6; color: #1A1A1A; font-family: 'Crimson Pro', serif; font-style: italic; text-align: center;">
-            Audiovisual Production • 20+ Years Crafting Stories from NYC to Oslo
-        </p>
-        
-        <a href="#contact" class="hero-cta">LET'S WORK TOGETHER</a>
-    </div>
-     <div style="margin-top: 4rem; opacity: 0.5; animation: bounce 2s infinite; display: flex; flex-direction: column; align-items: center;">
-    <span style="font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; margin-bottom: 0.5rem;">SCROLL</span>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-    </svg>
-</div>
-     <div class="hero-image-frame">
-    <img src="images/hero.jpg" alt="Portfolio image">
-  </div>
-
-</section>
-
-    <!-- Services Section -->
     <section class="services">
-        <h2 class="section-title">SERVICES</h2>
+        <h2 class="section-title">NUESTROS SERVICIOS</h2>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-number">01</div>
-                <h3 class="service-title">VIDEO PRODUCTION</h3>
-                <p class="service-description">
-                    Commercial campaigns, corporate content, music videos, and short films. From concept to final delivery with cinematic quality.
-                </p>
-                <p class="service-price">Half Day: 8,000 – 12,000 NOK<br>Full Day: 15,000 – 20,000 NOK</p>
+                <h3 style="font-family: 'Bebas Neue'; font-size: 2rem;">VIDEO PRODUCTION</h3>
+                <p>High-end corporate and creative video.</p>
             </div>
-
             <div class="service-card">
-                <div class="service-number">02</div>
-                <h3 class="service-title">PODCAST PRODUCTION</h3>
-                <p class="service-description">
-                    Full podcast production from setup to publishing. Remote and on-location recording via Riverside.fm, professional editing in DaVinci Resolve.
-                </p>
-                <p class="service-price">Setup + 5 Episodes: 25,000 – 30,000 NOK<br>Per Episode: 4,500 – 6,000 NOK</p>
+                <h3 style="font-family: 'Bebas Neue'; font-size: 2rem;">PODCASTING</h3>
+                <p>Professional audio recording and editing.</p>
             </div>
-
             <div class="service-card">
-                <div class="service-number">03</div>
-                <h3 class="service-title">COMMERCIAL PHOTOGRAPHY</h3>
-                <p class="service-description">
-                    Corporate portraits, events, product photography, and editorial work. High-end fashion photography background from NYC studios.
-                </p>
-                <p class="service-price">Half Day: 6,000 – 9,000 NOK<br>Full Day: 12,000 – 16,000 NOK</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-number">04</div>
-                <h3 class="service-title">POST-PRODUCTION</h3>
-                <p class="service-description">
-                    Advanced editing, color grading, and sound design. DaVinci Resolve Studio expertise for broadcast-quality finishing.
-                </p>
-                <p class="service-price">Editing: 800 – 1,200 NOK/hour<br>Color Grading: 1,000 – 1,500 NOK/project</p>
+                <h3 style="font-family: 'Bebas Neue'; font-size: 2rem;">PHOTOGRAPHY</h3>
+                <p>Corporate, event and artistic photography.</p>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio">
-        <div class="portfolio-container">
-            <h2 class="section-title">PORTFOLIO</h2>
-            <div class="vimeo-embed">
-                <iframe src="https://player.vimeo.com/video/944824332?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <a href="https://vimeo.com/iloveshoot" target="_blank" class="portfolio-link">VIEW FULL PORTFOLIO ON VIMEO →</a>
-        </div>
+    <section id="contact" class="contact">
+        <h2>LET'S CREATE</h2>
+        <p style="margin-top: 2rem; font-size: 1.2rem;">marianogarciaphoto@gmail.com</p>
     </section>
 
-    <!-- Experience Section -->
-    <section class="experience">
-        <div class="experience-container">
-            <h2 class="section-title">EXPERIENCE</h2>
-            <div class="experience-grid">
-                <div class="experience-item">
-                    <h3 class="experience-title">NYC STUDIOS (2010-2014)</h3>
-                    <p class="experience-description">
-                        Studio Manager at Jack Studios NYC. Photo Assistant to Patrick Demarchelier, Sølve Sundsbø, and other industry legends. High-budget fashion shoots and ad campaigns.
-                    </p>
-                </div>
-
-                <div class="experience-item">
-                    <h3 class="experience-title">INTERNATIONAL BRANDS</h3>
-                    <p class="experience-description">
-                        Worked on productions for Volvo, Puma, Dressmann, Volt, Lotería Nacional de España. Music festivals: Tons of Rock, OverOslo, Oslo Afro Arts Festival.
-                    </p>
-                </div>
-
-                <div class="experience-item">
-                    <h3 class="experience-title">OSLO CREATIVE HUB</h3>
-                    <p class="experience-description">
-                        Co-founder & Board Member at Vollebekk Fabrikker. Long-term documentation projects for Bydel Bjerke covering urban and social transformation (2015-2025).
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2 class="section-title">LET'S CREATE</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:info@iloveshoot.com">info@iloveshoot.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Phone</span>
-                    <a href="tel:+4793487456">+47 934 87 456</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Location</span>
-                    <span style="color: var(--text-primary);">Oslo, Norway</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Mariano Garcia — Audiovisual Production Oslo • Available for projects worldwide</p>
-    </footer>
 </body>
 </html>
