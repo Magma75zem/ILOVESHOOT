@@ -12,7 +12,7 @@
     
     <style>
         :root {
-            --bg-dark: #F0EAD6;         /* Cáscara de huevo */
+            --bg-dark: #F0EAD6;         /* Eggshell */
             --bg-white: #FFFFFF;
             --text-primary: #1A1A1A;
             --text-secondary: #4A4A4A;
@@ -21,7 +21,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background-color: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
+        body { font-family: 'DM Sans', sans-serif; background-color: var(--bg-dark); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
 
         /* --- HERO --- */
         .hero {
@@ -36,12 +36,12 @@
         .hero-image-container { margin-top: 4rem; width: 100%; max-width: 850px; }
         .hero-image { width: 100%; height: 450px; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-        /* --- SERVICES (TARIFAS) --- */
+        /* --- SERVICES --- */
         .services { padding: 8rem 2rem; background: var(--bg-dark); text-align: center; }
         .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5rem); color: var(--accent-gold); margin-bottom: 4rem; }
         .services-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-        .service-card { background: var(--bg-white); padding: 3.5rem 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-top: 4px solid transparent; }
-        .service-card:hover { transform: translateY(-10px); border-top: 4px solid var(--accent-gold); }
+        .service-card { background: var(--bg-white); padding: 3.5rem 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .service-card:hover { transform: translateY(-10px); }
         .service-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; margin-bottom: 1.2rem; }
         .price { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1.5rem; color: var(--accent-gold); display: block; margin-top: 1.5rem; border-top: 1px solid #eee; padding-top: 1rem; }
 
@@ -66,7 +66,7 @@
     <section class="hero">
         <img src="images/logo.png" alt="ILOVESHOOT" class="main-logo">
         <p class="hero-subtitle">Audiovisual Production • 20+ Years Crafting Stories from NYC to Oslo</p>
-        <a href="#contact" class="hero-cta">LET'S WORK TOGETHER</a>
+        <a href="mailto:info@iloveshoot.com" class="hero-cta">LET'S WORK TOGETHER</a>
         
         <div class="hero-image-container">
             <img src="images/hero.jpg" alt="Creative Workspace" class="hero-image">
@@ -83,7 +83,7 @@
             </div>
             <div class="service-card">
                 <h3>PODCASTING</h3>
-                <p>Crystal clear audio recording, professional editing, and sound design for your personal or brand series.</p>
+                <p>Crystal clear audio recording, professional editing, and sound design for your brand series.</p>
                 <span class="price">Desde 2.500 NOK</span>
             </div>
             <div class="service-card">
@@ -108,13 +108,15 @@
             </div>
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
-        
         <a href="https://www.vimeo.com/iloveshoot" target="_blank" class="portfolio-link">VER CANAL COMPLETO EN VIMEO</a>
     </section>
 
     <section id="contact" class="contact">
         <h2>LET'S CREATE</h2>
-        <p style="font-size: 1.4rem; margin-top: 1rem; font-family: 'Crimson Pro', serif; font-style: italic;">marianogarciaphoto@gmail.com</p>
+        <div style="margin-top: 2rem;">
+            <p style="font-size: 1.4rem; font-family: 'Crimson Pro', serif; font-style: italic;">info@iloveshoot.com</p>
+            <p style="font-size: 1.1rem; opacity: 0.7; margin-top: 0.5rem;">photovlc@gmail.com</p>
+        </div>
         
         <div class="social-links">
             <a href="https://instagram.com/tu_usuario" target="_blank"><i data-feather="instagram" style="width: 32px; height: 32px;"></i></a>
@@ -128,7 +130,6 @@
     </footer>
 
     <script>
-        // Activa los iconos de Feather
         feather.replace();
     </script>
 </body>
