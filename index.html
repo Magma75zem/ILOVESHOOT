@@ -453,7 +453,26 @@
             .services, .portfolio, .experience, .contact {
                 padding: 4rem 1.5rem;
             }
-        }
+        .hero-image-frame {
+  background: var(--bg-light);
+  padding: 2.5rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-frame img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero-image-frame img {
+    max-width: 100%;
+  }
+}
     </style>
 </head>
 <body>
@@ -474,6 +493,10 @@
         <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
     </svg>
 </div>
+     <div class="hero-image-frame">
+    <img src="images/hero.jpg" alt="Portfolio image">
+  </div>
+
 </section>
 
     <!-- Services Section -->
