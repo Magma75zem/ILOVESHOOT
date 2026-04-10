@@ -12,11 +12,11 @@
     
     <style>
         :root {
-            --bg-dark: #F0EAD6;         /* Eggshell */
+            --bg-dark: #F0EAD6;
             --bg-white: #FFFFFF;
             --text-primary: #1A1A1A;
             --text-secondary: #4A4A4A;
-            --accent-gold: #FF7F50;     /* Naranja Coral */
+            --accent-gold: #FF7F50;
             --accent-warm: #E66F45;
         }
 
@@ -36,27 +36,30 @@
         .hero-image-container { margin-top: 4rem; width: 100%; max-width: 850px; }
         .hero-image { width: 100%; height: 450px; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
+        /* --- ABOUT / WHO WE ARE --- */
+        .about { padding: 6rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
+        .about-text { font-family: 'Crimson Pro', serif; font-size: clamp(1.4rem, 4vw, 2rem); line-height: 1.4; color: var(--text-primary); }
+        .wolf-quote { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); color: var(--accent-gold); margin-top: 2rem; letter-spacing: 1px; }
+
         /* --- SERVICES --- */
         .services { padding: 8rem 2rem; background: var(--bg-dark); text-align: center; }
         .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5rem); color: var(--accent-gold); margin-bottom: 4rem; }
         .services-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-        .service-card { background: var(--bg-white); padding: 3.5rem 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .service-card { background: var(--bg-white); padding: 3.5rem 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; text-align: left; }
         .service-card:hover { transform: translateY(-10px); }
         .service-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; margin-bottom: 1.2rem; }
-        .price { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1.5rem; color: var(--accent-gold); display: block; margin-top: 1.5rem; border-top: 1px solid #eee; padding-top: 1rem; }
+        .price { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1.3rem; color: var(--accent-gold); display: block; margin-top: 1.5rem; border-top: 1px solid #eee; padding-top: 1rem; }
 
         /* --- PORTFOLIO --- */
         .portfolio { padding: 8rem 2rem; background: var(--bg-white); text-align: center; }
         .video-container { max-width: 1000px; margin: 0 auto; border: 4px solid var(--accent-gold); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
         .portfolio-link { display: inline-block; margin-top: 3rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--accent-gold); text-decoration: none; border-bottom: 2px solid var(--accent-gold); transition: 0.3s; }
-        .portfolio-link:hover { color: var(--text-primary); border-color: var(--text-primary); }
 
         /* --- CONTACT --- */
         .contact { padding: 8rem 2rem; text-align: center; background: var(--bg-dark); }
         .contact h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5rem); color: var(--accent-gold); }
         .social-links { display: flex; justify-content: center; gap: 2.5rem; margin-top: 4rem; }
         .social-links a { color: var(--text-primary); transition: 0.3s; }
-        .social-links a:hover { color: var(--accent-gold); transform: translateY(-5px); }
         
         footer { padding: 4rem; text-align: center; opacity: 0.5; font-size: 0.85rem; }
     </style>
@@ -67,9 +70,19 @@
         <img src="images/logo.png" alt="ILOVESHOOT" class="main-logo">
         <p class="hero-subtitle">Audiovisual Production • 20+ Years Crafting Stories from NYC to Oslo</p>
         <a href="mailto:info@iloveshoot.com" class="hero-cta">LET'S WORK TOGETHER</a>
-        
         <div class="hero-image-container">
             <img src="images/hero.jpg" alt="Creative Workspace" class="hero-image">
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-text">
+            From planning preproduction to filming and editing, we got you and your company covered. 
+            We offer a detailed and custom service to help achieve your dreams and goals. 
+            We like to get things done. We find solutions, not obstacles.
+        </div>
+        <div class="wolf-quote">
+            WE ARE THE WOLF,<br>BUT NOT THE BIG BAD ONE.
         </div>
     </section>
 
@@ -78,17 +91,17 @@
         <div class="services-grid">
             <div class="service-card">
                 <h3>VIDEO PRODUCTION</h3>
-                <p>Commercial campaigns, corporate content, and short films. From concept to final delivery with cinematic quality.</p>
+                <p>Commercial campaigns, corporate content, and short films. From concept to final delivery.</p>
                 <span class="price">Day Rate: From 10.000 NOK</span>
             </div>
             <div class="service-card">
                 <h3>PODCASTING</h3>
-                <p>Full production: setup, remote/on-location recording, and professional editing in DaVinci Resolve.</p>
+                <p>Full production: setup, recording, and professional editing in DaVinci Resolve.</p>
                 <span class="price">Per Episode: From 6.000 NOK</span>
             </div>
             <div class="service-card">
                 <h3>COMMERCIAL PHOTO</h3>
-                <p>Corporate portraits, editorial work, and high-end fashion photography with NYC studio experience.</p>
+                <p>Corporate portraits, editorial work, and high-end fashion with NYC experience.</p>
                 <span class="price">Day Rate: From 5.000 NOK</span>
             </div>
         </div>
@@ -98,12 +111,7 @@
         <h2 class="section-title">PORTFOLIO</h2>
         <div class="video-container">
             <div style="padding:56.25% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/944824332?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                    title="Zemblanity 22">
-                </iframe>
+                <iframe src="https://player.vimeo.com/video/944824332" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" title="Zemblanity 22"></iframe>
             </div>
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
@@ -114,12 +122,11 @@
         <h2>LET'S CREATE</h2>
         <div style="margin-top: 2rem;">
             <p style="font-size: 1.4rem; font-family: 'Crimson Pro', serif; font-style: italic;">info@iloveshoot.com</p>
-            <p style="font-size: 1.1rem; opacity: 0.7; margin-top: 0.5rem;">photovlc@gmail.com</p>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem;">+47 934 87 456</p>
         </div>
         
         <div class="social-links">
             <a href="https://instagram.com/iloveshoot" target="_blank"><i data-feather="instagram" style="width: 32px; height: 32px;"></i></a>
-            <a href="https://facebook.com/iloveshoot" target="_blank"><i data-feather="facebook" style="width: 32px; height: 32px;"></i></a>
             <a href="https://linkedin.com/in/mariano-garcia-iloveshoot" target="_blank"><i data-feather="linkedin" style="width: 32px; height: 32px;"></i></a>
         </div>
     </section>
