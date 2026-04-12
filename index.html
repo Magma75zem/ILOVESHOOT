@@ -52,9 +52,49 @@
 
         /* --- PORTFOLIO --- */
         .portfolio { padding: 8rem 2rem; background: var(--bg-white); text-align: center; }
-        .video-container { max-width: 1000px; margin: 0 auto; border: 4px solid var(--accent-gold); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
-        .portfolio-link { display: inline-block; margin-top: 3rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--accent-gold); text-decoration: none; border-bottom: 2px solid var(--accent-gold); transition: 0.3s; }
+        
+        /* La rejilla mágica */
+        .portfolio-grid { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 20px; 
+        }
 
+        .portfolio-video-item { 
+            position: relative;
+            padding-bottom: 56.25%; /* Proporción 16:9 */
+            height: 0;
+            border: 2px solid var(--accent-gold); /* Borde elegante coral */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .portfolio-video-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-video-item iframe { 
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%; 
+        }
+
+        .portfolio-link { 
+            display: inline-block; 
+            margin-top: 4rem; 
+            font-family: 'Bebas Neue', sans-serif; 
+            font-size: 1.8rem; 
+            color: var(--accent-gold); 
+            text-decoration: none; 
+            border-bottom: 2px solid var(--accent-gold); 
+            transition: 0.3s; 
+        }
+        .portfolio-link:hover { color: var(--accent-warm); border-color: var(--accent-warm); }
         /* --- CONTACT --- */
         .contact { padding: 8rem 2rem; text-align: center; background: var(--bg-dark); }
         .contact h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5rem); color: var(--accent-gold); }
@@ -107,14 +147,30 @@
         </div>
     </section>
 
-    <section id="portfolio" class="portfolio">
+   <section id="portfolio" class="portfolio">
         <h2 class="section-title">PORTFOLIO</h2>
-        <div class="video-container">
-            <div style="padding:56.25% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/944824332" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" title="Zemblanity 22"></iframe>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-video-item">
+                <iframe src="https://player.vimeo.com/video/163019345?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div class="portfolio-video-item">
+                <iframe src="https://player.vimeo.com/video/383256729?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div class="portfolio-video-item">
+                <iframe src="https://player.vimeo.com/video/393932266?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div class="portfolio-video-item">
+                <iframe src="https://player.vimeo.com/video/317243499?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div class="portfolio-video-item">
+                <iframe src="https://player.vimeo.com/video/254610003?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div class="portfolio-video-item">
+                <iframe src="https://player.vimeo.com/video/835442520?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
+
         <a href="https://www.vimeo.com/iloveshoot" target="_blank" class="portfolio-link">VIEW FULL PORTFOLIO ON VIMEO</a>
     </section>
 
